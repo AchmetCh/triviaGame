@@ -127,3 +127,18 @@ exports.getHighScores = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.deleteUsersNotInTopTen = async (req, res) => {
+  try {
+    const allUsers = await User.find().sort({ score: -1 });
+    const topTenUsers = allUsers.slice(0, 10);
+    const usersNotInTopTen = allUsers.filter(user => !topTenUsers.includes(user));
+
+    await Promise.all(usersNotInTopTen.map(user => User.findByIdAndDelete(user._id)));
+
+    res.json(usersNotInTopTen);
+  } catch (error) {
+    console.error("Error deleting users not in top ten:", error);
+    res.status(500).json({ error: error.message });
+  }
+};

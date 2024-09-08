@@ -12,7 +12,7 @@ app.options('*', cors())
 app.use(cors({
   origin: '*', // Allow multiple origins
   methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,x-auth-token',
+  allowedHeaders: 'Content-Type,Authorization',
   credentials: true, // Enable credentials if needed
   optionsSuccessStatus: 200
 }));
