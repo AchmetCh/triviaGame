@@ -5,8 +5,8 @@ const { auth } = require("../middlewares/auth");
 
 router.get('/generate-questions', generateQuestion)
 router.post('/register', NewUser )
-router.post('/update-score', auth, topTenUsersScore)
-router.get('/high-scores', getHighScores)
+router.post('/update-score',topTenUsersScore)
+router.get('/high-scores',getHighScores)
 router.delete('/deleteUsers', deleteUsersNotInTopTen)
 
 module.exports = router
