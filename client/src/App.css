@@ -1,0 +1,351 @@
+.App {
+
+}
+.app {
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  color: white;
+ background-image: url('./assets/bg.jpg');
+ background-size: cover;
+}
+.highScores {
+  width: 20%;
+  background-color: #020230;
+display: flex;
+flex-direction: column;
+}
+.highScores h2 {
+  height: 50px;
+  margin: 20px;
+  text-align: center;
+}
+.highScores ol {
+  list-style-position:outside;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.highScores li p{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+margin: 0 20px 0 0;
+}
+.highScoresLogin {
+  width: 100%;
+display: flex;
+flex-direction: column;
+background-color: #020230;
+}
+.highScoresLogin h2 {
+  height: 50px;
+  margin: 20px;
+  text-align: center;
+  background-color: #020230;
+}
+.highScoresLogin ol {
+  list-style-position:outside;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: #020230;
+}
+.highScoresLogin li p{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+margin: 0 20px 0 0;
+background-color: #020230;
+}
+.questionanswers {
+  display: grid;
+ grid-template-rows: 1fr 1fr 1fr;
+  height: 400px;
+}
+.main {
+  width: 80%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
+    url("https://i.ytimg.com/vi/yQbJRGs0fy8/maxresdefault.jpg") center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pyramid {
+  width: 20%;
+  background-color: #020230;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moneyList {
+  padding: 20px;
+  list-style: none;
+  width: 100%;
+}
+
+.moneyListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.moneyListItem.active {
+  background-color: teal;
+}
+
+.moneyListItemNumber {
+  width: 30%;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.moneyListItemAmount {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.top {
+  height: 50%;
+  position: relative;
+}
+
+.timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  bottom: 100px;
+  left: 80px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.bottom {
+  height: 50%;
+}
+
+.trivia {
+  display: flex;
+}
+
+.question {
+ margin-bottom: 30px;
+  background: linear-gradient(#100241, black);
+  align-self: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-size: 20px;
+}
+
+.answers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+
+  width: 40%;
+  padding: 10px;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.answer:hover{
+  background: linear-gradient(#22074d, #0e0124);
+  cursor: pointer;
+}
+.answer.active {
+  background: mediumblue;
+}
+
+.answer.correct {
+  animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+
+.answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: crimson;
+  }
+}
+
+.endText {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.login-container {
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  color: white;
+ background-image: url('./assets/bg.jpg');
+ background-size: cover;
+}
+.start {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: -100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #020230;
+}
+
+.gameQuestions {
+  position: relative;
+  top: 200px;
+}
+
+.startInput {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.startButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+}
+.titleName {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(236, 231, 221);
+  height: 40px;
+  color: rgb(24, 23, 23);
+  font-size: 16px;
+}
+.score {
+  font-size: 25px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 1000px) {
+  .titleName {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(236, 231, 221);
+    height: 40px;
+    color: rgb(24, 23, 23);
+    font-size: 8px;
+  }
+  .gameQuestions {
+    position: relative;
+    top: 10px;
+  }
+  .timer {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    bottom: 100px;
+    left: 80px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .question {
+    margin-bottom: 30px;
+     background: linear-gradient(#100241, black);
+     align-self: center;
+     text-align: center;
+     padding: 20px;
+     border-radius: 10px;
+     border: 2px solid white;
+     font-size: 16px;
+   }
+   
+   .answers {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     font-size: 16px;
+   }
+}
+@media only screen and (max-width: 600px) {
+  body:before {
+    content: "Please rotate your mobile 📲";
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 34px;
+    margin: 20px;
+    margin-top: 30%;
+  }
+  .App {
+    display: none;
+  }
+}
