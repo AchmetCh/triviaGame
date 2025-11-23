@@ -135,7 +135,7 @@ exports.topTenUsersScore = async (req, res) => {
     await user.save();
 
     // Get the current top 10 high scores
-    const highScores = await User.find().sort({ score: -1 }).limit(10);
+    const highScores = await User.find().sort({ score: -1 }).limit(3);
 
     // If the user is not in the top 10, remove them
     if (!highScores.some((highScore) => highScore._id.equals(user._id))) {
@@ -154,7 +154,7 @@ exports.topTenUsersScore = async (req, res) => {
 
 exports.getHighScores = async (req, res) => {
   try {
-    const highScores = await User.find().sort({ score: -1 }).limit(10);
+    const highScores = await User.find().sort({ score: -1 }).limit(3);
     res.json(highScores);
   } catch (error) {
     console.error("Error getting high scores:", error);
@@ -165,7 +165,7 @@ exports.getHighScores = async (req, res) => {
 exports.deleteUsersNotInTopTen = async (req, res) => {
   try {
     const allUsers = await User.find().sort({ score: -1 });
-    const topTenUsers = allUsers.slice(0, 10);
+    const topTenUsers = allUsers.slice(0, 3);
     const usersNotInTopTen = allUsers.filter(user => !topTenUsers.includes(user));
 
     await Promise.all(usersNotInTopTen.map(user => User.findByIdAndDelete(user._id)));

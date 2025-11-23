@@ -20,7 +20,13 @@ function App() {
     const fetchHighscores = async () => {
       try {
         const response = await axios.get(`${api}/high-scores`);
-        setHighscores(response.data);
+        // validate backend response: it should be an array of scores
+        if (Array.isArray(response.data)) {
+          setHighscores(response.data);
+        } else {
+          console.error("Unexpected /high-scores response (expected array):", response.data);
+          // keep default [] to avoid rendering errors in production
+        }
       } catch (error) {
         console.error(error);
       }

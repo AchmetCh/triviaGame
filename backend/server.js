@@ -17,9 +17,9 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
+
 //route
 app.use('/', routes)
-
 
 
 app.listen(port, () => {
