@@ -53,7 +53,7 @@ exports.generateQuestion = async (req, res) => {
 
         // 3. Use the generateContent method
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash", // A fast, powerful model, comparable to gpt-3.5-turbo
+           model: "gemini-2.5-flash", // A fast, powerful model, comparable to gpt-3.5-turbo
             contents: [
                 {
                     role: "user",
