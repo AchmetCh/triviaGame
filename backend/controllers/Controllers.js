@@ -104,7 +104,7 @@ exports.NewUser = async (req, res) => {
     if (user) {
       return res.status(400).json({ message: "Name already exists" });
     }
-
+    
     // Create a new user
     const newUser = new User({ name });
     await newUser.save();
