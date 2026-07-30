@@ -444,7 +444,7 @@ const Login = ({ highScores, setIsLoggedIn }) => {
             </ol>
           </div>
 
-          <div className="login-footer">Who Wants to Be a Millionaire · Greece Edition · v.0.01</div>
+          <div className="login-footer">Who Wants to Be a Millionaire · Science Edition · v.0.01</div>
         </div>
       </div>
     </>

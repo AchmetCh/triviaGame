@@ -48,19 +48,19 @@ const triviaQuestionSchema = {
 exports.generateQuestion = async (req, res) => {
     try {
         // const topics = ["milky way", "ocean", "space", "geography", "science", "sports" , 'aliens', 'galaxies', 'computers', 'mathematics'];
-        const topics = ["ιστορία", "γεωγραφία", " προγραμματισμός"," τεχνολογία", "επιστήμη", "αθλητισμός", "μουσική", "κινηματογράφος", "τεχνολογία", "φύση"];
+        const topics = ['προγραμματισμός', 'τεχνητή νοημοσύνη', 'javascript', 'python', 'html', 'css', 'node.js', 'mongodb', 'mysql', 'react', 'angular', 'c#', 'php', 'sql', 'typescript', 'data science', 'machine learning', 'deep learning', 'neural networks', 'algorithms', 'data structures', 'cloud computing', 'cybersecurity', 'blockchain', 'internet of things (IoT)', 'virtual reality (VR)', 'augmented reality (AR)', 'game development', 'mobile app development', 'web development', 'software engineering', 'computer graphics', 'computer vision', 'natural language processing (NLP)', 'robotics', 'quantum computing'];
         const topic = topics[Math.floor(Math.random() * topics.length)];
 
         // 3. Use the generateContent method
         const response = await ai.models.generateContent({
-           model: "gemini-2.5-flash", // A fast, powerful model, comparable to gpt-3.5-turbo
+           model: "gemini-2.5-flash-lite",
             contents: [
                 {
                     role: "user",
                     parts: [
                         {
                             // text: `Δημιούργησε μία **εντελώς μοναδική, πρωτότυπη** και **ποικίλη** ερώτηση για παιδιά γυμνασίου trivia για ${topic}. Να έχει τέσσερις επιλογές απάντησης, με **ακριβώς μία** σωστή. Επέστρεψε την απάντηση σε μορφή JSON με το εξής σχήμα:`,
-                            text: 'Δημιούργησε μία **πολύ σύντομη**, μοναδική ερώτηση trivia με ${topic}. Η ερώτηση και οι τέσσερις επιλογές απάντησης πρέπει να είναι **σύντομες και περιεκτικές** (όχι περισσότερες από 10 λέξεις η καθεμία). Να έχει ακριβώς μία σωστή απάντηση. Επέστρεψε την απάντηση σε μορφή JSON με το εξής σχήμα:'
+                            text: `Δημιούργησε μία **πολύ σύντομη**, μοναδική ερώτηση trivia με θέμα **${topic}**. Η ερώτηση ΠΡΕΠΕΙ να αφορά αποκλειστικά το θέμα "${topic}" και τίποτε άλλο. Η ερώτηση και οι τέσσερις επιλογές απάντησης πρέπει να είναι **σύντομες και περιεκτικές** (όχι περισσότερες από 10 λέξεις η καθεμία). Να έχει ακριβώς μία σωστή απάντηση. Επέστρεψε την απάντηση σε μορφή JSON με το εξής σχήμα:`
                         },
                     ],
                 },
